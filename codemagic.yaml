@@ -5,7 +5,9 @@ workflows:
       node: 18
       xcode: latest
       groups:
-        - test  # contains EAS_USERNAME and EAS_PASSWORD
+        - test
+      vars:
+        EXPO_TOKEN: ZQ4gVXrR2NWdSmtNc7hugZfKLYGUf_VFwt_KGieG
     scripts:
       - name: Install dependencies
         working_directory: collegeapp
@@ -15,7 +17,7 @@ workflows:
       - name: Login to EAS
         working_directory: collegeapp
         script: |
-          printf "ItsHarli\ni^4k4!+.kf_3U+u\n" | eas login
+          eas login --non-interactive
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
