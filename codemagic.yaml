@@ -15,8 +15,7 @@ workflows:
       - name: Login to EAS
         working_directory: collegeapp
         script: |
-          echo "ItsHarli" | eas login --username
-          echo "i^4k4!+.kf_3U+u" | eas login --password
+          printf "ItsHarli\ni^4k4!+.kf_3U+u\n" | eas login
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
