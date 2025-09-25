@@ -10,9 +10,13 @@ workflows:
         script: |
           npm install -g eas-cli
           npm install
+      - name: Authenticate with Expo
+        working_directory: collegeapp
+        script: |
+          eas whoami || eas login --token $EXPO_TOKEN
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
-          eas build -p ios --profile preview --non-interactive --skip-credentials-check
+          eas build -p ios --profile preview --non-interactive
     artifacts:
       - collegeapp/dist/*.ipa
