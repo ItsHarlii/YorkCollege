@@ -12,10 +12,6 @@ workflows:
         script: |
           npm install -g eas-cli
           npm install
-      - name: Authenticate with Expo
-        working_directory: collegeapp
-        script: |
-          eas whoami || eas login --token ZQ4gVXrR2NWdSmtNc7hugZfKLYGUf_VFwt_KGieG
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
