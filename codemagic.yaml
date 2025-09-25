@@ -15,7 +15,7 @@ workflows:
       - name: Authenticate with Expo
         working_directory: collegeapp
         script: |
-          eas whoami || eas login --token $EXPO_TOKEN
+          eas whoami || eas login --token ZQ4gVXrR2NWdSmtNc7hugZfKLYGUf_VFwt_KGieG
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
