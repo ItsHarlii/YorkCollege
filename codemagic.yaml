@@ -22,6 +22,6 @@ workflows:
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
-           eas build -p ios --profile preview --local
+           eas build -p ios --profile preview --local --no-wait --skip-credentials-check
     artifacts:
       - collegeapp/dist/*.ipa
