@@ -1,1 +1,15 @@
-
+workflows:
+  ios-unsigned:
+    name: iOS Unsigned Build
+    environment:
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Build iOS .app
+        script: |
+          flutter build ios --no-codesign
+    artifacts:
+      - build/ios/iphoneos/*.app
