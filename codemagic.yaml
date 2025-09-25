@@ -7,11 +7,11 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
-          cd YorkCollege
+          cd collegeapp
           flutter pub get
       - name: Build iOS .app (unsigned)
         script: |
-          cd YorkCollege
+          cd collegeapp
           flutter build ios --no-codesign
     artifacts:
-      - YorkCollege/build/ios/iphoneos/*.app
+      - collegeapp/build/ios/iphoneos/*.app
