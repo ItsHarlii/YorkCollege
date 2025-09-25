@@ -1,4 +1,5 @@
-workflows:
+artifacts:
+      - collegeapp/dist/*.ipaworkflows:
   ios-unsigned-expo:
     name: iOS Unsigned Build (Expo)
     environment:
@@ -14,6 +15,15 @@ workflows:
         script: |
           npm install -g eas-cli
           npm install
+      - name: Check project structure
+        working_directory: collegeapp
+        script: |
+          echo "Checking project structure..."
+          ls -la
+          echo "Looking for App files..."
+          find . -name "App.*" -type f
+          echo "Checking package.json main entry..."
+          cat package.json | grep -A 5 -B 5 "main"
       - name: Login to EAS
         working_directory: collegeapp
         script: |
@@ -23,5 +33,3 @@ workflows:
         working_directory: collegeapp
         script: |
            eas build -p ios --profile preview --local --non-interactive --clear-cache
-    artifacts:
-      - collegeapp/dist/*.ipa
