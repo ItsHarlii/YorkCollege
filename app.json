@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "6c8a356e-b425-4be4-adcb-5999a33e1544"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "online.harlie.yorkcollege",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "online.harlie.yorkcollege"
+    }
+  }
+}
