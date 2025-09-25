@@ -1,17 +1,19 @@
 workflows:
-  ios-unsigned:
-    name: iOS Unsigned Build
+  ios-unsigned-expo:
+    name: iOS Unsigned Build (Expo)
     environment:
+      node: 18
+      npm: default
       xcode: latest
-      cocoapods: default
     scripts:
       - name: Install dependencies
+        working_directory: collegeapp
         script: |
-          cd collegeapp
-          flutter pub get
-      - name: Build iOS .app (unsigned)
+          npm install -g eas-cli
+          npm install
+      - name: Build iOS (unsigned)
+        working_directory: collegeapp
         script: |
-          cd collegeapp
-          flutter build ios --no-codesign
+          eas build -p ios --profile preview --non-interactive --skip-credentials-check
     artifacts:
-      - collegeapp/build/ios/iphoneos/*.app
+      - collegeapp/dist/*.ipa
