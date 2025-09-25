@@ -5,7 +5,7 @@ workflows:
       node: 18
       xcode: latest
       groups:
-        - test
+        - test  # contains EXPO_TOKEN
     scripts:
       - name: Install dependencies
         working_directory: collegeapp
@@ -15,6 +15,6 @@ workflows:
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
-          eas build -p ios --profile preview --non-interactive
+           eas build -p ios --profile preview --local
     artifacts:
       - collegeapp/dist/*.ipa
