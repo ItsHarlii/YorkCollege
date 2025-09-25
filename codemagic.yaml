@@ -3,7 +3,6 @@ workflows:
     name: iOS Unsigned Build (Expo)
     environment:
       node: 18
-      npm: default
       xcode: latest
     scripts:
       - name: Install dependencies
