@@ -5,13 +5,18 @@ workflows:
       node: 18
       xcode: latest
       groups:
-        - test  # contains EXPO_TOKEN
+        - test  # contains EAS_USERNAME and EAS_PASSWORD
     scripts:
       - name: Install dependencies
         working_directory: collegeapp
         script: |
           npm install -g eas-cli
           npm install
+      - name: Login to EAS
+        working_directory: collegeapp
+        script: |
+          echo "ItsHarli" | eas login --username
+          echo "i^4k4!+.kf_3U+u" | eas login --password
       - name: Build iOS (unsigned)
         working_directory: collegeapp
         script: |
