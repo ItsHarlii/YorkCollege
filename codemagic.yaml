@@ -4,6 +4,8 @@ workflows:
     environment:
       node: 18
       xcode: latest
+      groups:
+        - test
     scripts:
       - name: Install dependencies
         working_directory: collegeapp
